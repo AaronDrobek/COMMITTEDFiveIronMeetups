@@ -1,5 +1,7 @@
 *{
   border: 1px solid orange;
+  margin: 0;
+  padding: 0;
 }
 
 body{
@@ -7,7 +9,7 @@ body{
   height: 50vw;
 }
 
-header{
+.signUpHeader{
   width: 100vw;
   height: 20vw;
   text-align: center;
@@ -55,9 +57,111 @@ header{
   height: 2vw;
 }
 
+#gotToSignUp{
+  background: limegreen;
+  align-self: center;
+  text-align: center;
+  width: 28vw;
+  height: 2vw;
+}
+
 #login{
   width: 15vw;
   height: 2vw;
   align-self: center;
   text-align: center;
+}
+
+#goToLogin{
+  width: 15vw;
+  height: 2vw;
+  align-self: center;
+  text-align: center;
+}
+
+
+.eventViewHeader{
+  display:flex;
+  background-color:#202f37;
+  width: 100vw;
+  height: 100px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.eventViewHeader h2{
+  margin-left: 100px;
+  color: white;
+  font-size: 40px;
+}
+
+.navTags{
+  display:flex;
+}
+
+.navTags a{
+  text-align: center;
+  color: #202f37;
+  font-size: 14pt;
+  padding: 5px;
+  text-decoration: none;
+  background-color: white;
+  border-radius: 3px;
+  height: 25px;
+  width: 100px;
+  margin-right: 20px;
+
+}
+
+.eventViewContainer{
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+}
+
+.eventDescription{
+  width: 60vw;
+  justify-content: center;
+  margin-left: 100px;
+}
+
+.eventDescription h1{
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.eventDescription h2{
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+#eventDateTime{
+  margin-bottom: 20px;
+}
+
+#eventLocation{
+  margin-bottom: 20px;
+}
+
+#eventDescription{
+  margin-bottom: 20px;
+}
+
+.attendeesList{
+  width: 40vw;
+  border-left: 1px solid black;
+}
+
+.attendeesList h2{
+  text-align: center;
+  font-size: 40px;
+}
+
+#attendees{
+  border: 1px solid black;
+  box-shadow: 5px 5px 5px #888888;
+  width: 300px;
+  height: 50px;
+  margin-left: 100px;
+  margin-top: 30px;
 }
