@@ -1,16 +1,49 @@
 *{
-  border: 1px solid orange;
+ 
+  margin: 0;
+  padding: 0;
 }
 
 body{
   width: 100vw;
   height: 50vw;
+  background-color: rgb(176, 196, 222);
+
 }
 
-header{
+
+/*/////////sign-in and login page //////////*/
+
+.signUpHeader{
   width: 100vw;
-  height: 20vw;
+  height: 5vw;
   text-align: center;
+  border: none;
+  background-color: rgb(41, 36, 33);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+
+}
+.signUpHeader h1{
+  border: none;
+  font-family: Helvetica;
+  color: white;
+  font-size: 50px;
+}
+.signUpHeader :hover{
+  color: rgb(176, 196, 222);
+}
+.pleaseLogin{
+  display: flex;
+  justify-content: center;
+  font-size: 60px;
+  font-style: italic;
+
+}
+.pleaseLogin :hover{
+  color: white;
 }
 
 .signupContainer{
@@ -24,6 +57,8 @@ header{
   height: 30vw;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #username{
@@ -53,6 +88,22 @@ header{
   text-align: center;
   width: 28vw;
   height: 2vw;
+
+}
+
+#goToSignUp{
+  background: limegreen;
+  align-self: center;
+  text-align: center;
+  width: 100px;
+  height: 50px;
+  margin-top: 50px;
+  border-radius: 10px;
+  font-size: 20px;
+  box-shadow: 0px 5px 5px black;
+}
+#goToSignUp :hover{
+  color: lightgreen;
 }
 
 #login{
@@ -60,4 +111,177 @@ header{
   height: 2vw;
   align-self: center;
   text-align: center;
+  background-color: rgb(139, 139, 131);
+}
+
+#goToLogin{
+  width: 15vw;
+  height: 2vw;
+  align-self: center;
+  text-align: center;
+}
+
+/*///////////////event list page/////////////*/
+.eventListHeader{
+    display:flex;
+    background-color:#202f37;
+    width: 100vw;
+    height: 100px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.eventListHeader h2{
+  margin-left: 100px;
+  color: white;
+  font-size: 40px;
+}
+
+.eventListContainer{
+  display: flex;
+  margin-top: 50px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.eventListItems{
+  border: 1px solid black;
+  box-shadow: 5px 5px 5px #888888;
+  width: 350px;
+  height: 150px;
+  margin-left: 100px;
+  border-radius: 3px;
+}
+
+#eventListName{
+  height: 50px;
+  margin-right: 0;
+}
+
+.eventDetails{
+  display: flex;
+  flex-direction: row;
+  width: 250;
+  margin-top: 50px;
+}
+
+#eventListLocation{
+  width: 170px;
+}
+
+#eventListDateTime{
+
+  margin-left: 30px;
+
+}
+
+#confirmOrView{
+  float:right;
+  width:70px;
+}
+
+#rsvp{
+  height: 75px;
+  box-shadow: 5px 5px 5px #888888;
+  border: 1px solid black;
+  border-top-right-radius: 3px;
+  font-size: 16px;
+}
+
+#view{
+  height: 75px;
+  box-shadow: 5px 5px 5px #888888;
+  border: 1px solid black;
+  border-bottom-right-radius: 3px;
+  font-size: 16px;
+}
+
+/*///////////////event view page///////////////////*/
+.eventViewHeader{
+  display:flex;
+  background-color:#202f37;
+  width: 100vw;
+  height: 100px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.eventViewHeader h2{
+  margin-left: 100px;
+  color: white;
+  font-size: 40px;
+}
+
+.navTags{
+  display:flex;
+}
+
+.navTags a{
+  text-align: center;
+  color: #202f37;
+  font-size: 14pt;
+  padding: 5px;
+  text-decoration: none;
+  background-color: white;
+  border-radius: 3px;
+  height: 25px;
+  width: 100px;
+  margin-right: 20px;
+
+}
+
+.eventViewContainer{
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+}
+
+.eventDescription{
+  width: 60vw;
+  justify-content: center;
+  margin-left: 100px;
+}
+
+.eventDescription h1{
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.eventDescription h2{
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+#eventDateTime{
+  margin-bottom: 20px;
+  margin-left: 50px;
+}
+
+#eventLocation{
+  margin-bottom: 20px;
+  margin-left: 50px;
+}
+
+#eventDescription{
+  margin-bottom: 20px;
+  margin-left: 50px;
+}
+
+.attendeesList{
+  width: 40vw;
+  border-left: 1px solid black;
+}
+
+.attendeesList h2{
+  text-align: center;
+  font-size: 40px;
+}
+
+#attendees{
+  border: 1px solid black;
+  box-shadow: 5px 5px 5px #888888;
+  width: 300px;
+  height: 50px;
+  margin-left: 100px;
+  margin-top: 30px;
 }
