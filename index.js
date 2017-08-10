@@ -1,3 +1,4 @@
+
 let login = `
   <div class="login">
 
@@ -5,17 +6,18 @@ let login = `
 
       <header class="signUpHeader">
         <h1>Iron Meetups</h1>
-        <h4>Please Login!</h4>
+        
       </header>
       <div class="loginContainer">
         <input type="text" id="username" value="Username">
         <input type="text" id="password" value="Password">
         <button type="button" id="login" >Login</button>
-        <button type="button" id="goToSignUp">Create An Account</button>
+        <button type="button" id="goToSignUp">Sign up!</button>
 
       </div>
-
-
+      <div class = "pleaseLogin">
+      <h4>Please Login!</h4>
+      </div
   </div>`;
 
 let signUp = `
@@ -114,3 +116,4 @@ let goToLogin = document.querySelector("#goToLogin");
 goToLogin.addEventListener('click', function(){
 
 });
+
