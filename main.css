@@ -9,6 +9,9 @@ body{
   height: 50vw;
 }
 
+
+/*/////////sign-in and login page //////////*/
+
 .signUpHeader{
   width: 100vw;
   height: 20vw;
@@ -79,7 +82,82 @@ body{
   text-align: center;
 }
 
+/*///////////////event list page/////////////*/
+.eventListHeader{
+    display:flex;
+    background-color:#202f37;
+    width: 100vw;
+    height: 100px;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.eventListHeader h2{
+  margin-left: 100px;
+  color: white;
+  font-size: 40px;
+}
+
+.eventListContainer{
+  display: flex;
+  margin-top: 50px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.eventListItems{
+  border: 1px solid black;
+  box-shadow: 5px 5px 5px #888888;
+  width: 350px;
+  height: 150px;
+  margin-left: 100px;
+  border-radius: 3px;
+}
+
+#eventListName{
+  height: 50px;
+  margin-right: 0;
+}
+
+.eventDetails{
+  display: flex;
+  flex-direction: row;
+  width: 250;
+  margin-top: 50px;
+}
+
+#eventListLocation{
+  width: 170px;
+}
+
+#eventListDateTime{
+
+  margin-left: 30px;
+
+}
+
+#confirmOrView{
+  float:right;
+  width:70px;
+}
+
+#rsvp{
+  height: 75px;
+  box-shadow: 5px 5px 5px #888888;
+  border: 1px solid black;
+  border-top-right-radius: 3px;
+  font-size: 16px;
+}
+
+#view{
+  height: 75px;
+  box-shadow: 5px 5px 5px #888888;
+  border: 1px solid black;
+  border-bottom-right-radius: 3px;
+  font-size: 16px;
+}
+
+/*///////////////event view page///////////////////*/
 .eventViewHeader{
   display:flex;
   background-color:#202f37;
@@ -137,14 +215,17 @@ body{
 
 #eventDateTime{
   margin-bottom: 20px;
+  margin-left: 50px;
 }
 
 #eventLocation{
   margin-bottom: 20px;
+  margin-left: 50px;
 }
 
 #eventDescription{
   margin-bottom: 20px;
+  margin-left: 50px;
 }
 
 .attendeesList{
