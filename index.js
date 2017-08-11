@@ -1,4 +1,4 @@
-
+console.log("index activated");
 let login = `
   <div class="login">
 
@@ -98,16 +98,43 @@ let eventView = `
          <!-- //will be in for loop to generate registered users. Wasn't sure if p tag was most appropriate. -->
           </div>
   </div>
-`;
-//  function signup() {
-//    let goToSignUp = document.querySelector("#goToSignUp");
-//
-//    goToSignUp.addEventListener('click', function(){
-//      console.log("signupActivated");
-//      container.innerHTML= signUp;
-//    });
-//  }
-let container = document.querySelector(".container");
+// `
+let goToSignUpButton;
+let loginButton;
+let goToLoginButton;
+let signUpButton;
+let container;
+window.onload =function(){
+  container        = document.querySelector(".container");
+  container.innerHTML= login;
+setVariables();
+};
+
+function setVariables(){
+goToSignUpButton = document.querySelector("#goToSignUp");
+loginButton      = document.querySelector("#login");
+goToLoginButton  = document.querySelector("#goToLogin");
+signUpButton     = document.querySelector("#signUp");
+console.log(goToSignUpButton);
+signUpListener();
+
+};
+
+
+function signUpListener(){
+  console.log(goToSignUpButton);
+  goToSignUpButton.addEventListener('click', function(){
+    container.innerHTML=signUp;
+    console.log("gotobutton clicked");
+  });
+  loginListener();
+}
+
+function loginListener(){
+  console.log(goToLoginButton);
+}
+
+
 
 
 for (var i = 0; i < events.results.length; i++) {
@@ -160,6 +187,7 @@ let eventViewContainer = document.querySelector('#attendeesList');
 // fetch()
 // .then(function(response) {
 // response.json().then(function(data){
+
   for (var i = 0; i < users.results.length; i++) {
     for (var j = 0; j < users.results[i].eventsClicked.length; j++) {
 
