@@ -228,12 +228,12 @@ body{
   margin-left: 50px;
 }
 
-.attendeesList{
+#attendeesList{
   width: 40vw;
   border-left: 1px solid black;
 }
 
-.attendeesList h2{
+#attendeesList h2{
   text-align: center;
   font-size: 40px;
 }
@@ -245,4 +245,9 @@ body{
   height: 50px;
   margin-left: 100px;
   margin-top: 30px;
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 30px;
+  padding-top:10px;
+
 }

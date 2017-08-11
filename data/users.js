@@ -23,6 +23,7 @@ const users =
         "registered":"2007-01-12 19:26:30",
         "phone":"(518)-664-5821",
         "cell":"(385)-917-9080",
+        "eventsClicked" : ["19671029298637","19671029091609"],
         "picture":{
             "large":"https://randomuser.me/api/portraits/men/0.jpg",
             "medium":"https://randomuser.me/api/portraits/med/men/0.jpg",
@@ -54,6 +55,7 @@ const users =
             "registered":"2007-05-12 13:26:30",
             "phone":"(518)-664-5781",
             "cell":"(385)-917-5920",
+            "eventsClicked" : ["19671029091609"],
             "picture":{
                 "large":"https://randomuser.me/api/portraits/men/0.jpg",
                 "medium":"https://randomuser.me/api/portraits/med/men/0.jpg",
@@ -61,3 +63,107 @@ const users =
                 "nat":"US"
             },
 ]}
+
+const events =
+    {"results":[{
+        "title":"TIY Graduation",
+        "location":{
+            "street":"115 MLK JR Drive",
+            "city":"Atlanta","state":"georgia",
+            "postcode":30303
+        },
+        "date":{
+            "time":1500,
+            "dayofweek":"friday",
+            "month":"october",
+            "date":"6",
+            "year":"2017",
+            "timezone":"EST"
+        },
+        "rsvp_code":"19671029091609",
+        "time_registered":"2007-01-12 19:26:30",
+        "phone":"(518)-664-5821",
+        "cell":"(385)-917-9080",
+        "organizer_info":{
+            "name":"ryan curtis",
+            "email":"curtis.ryan@example.com"
+        },
+        "event_picture":{
+            "large":"https://randomuser.me/api/portraits/men/0.jpg",
+            "medium":"https://randomuser.me/api/portraits/med/men/0.jpg",
+            "thumbnail":"https://randomuser.me/api/portraits/thumb/men/0.jpg"},
+            "nat":"US"
+        },
+    {
+        "title":"Labor Day Beach Partay",
+        "location":{
+            "street":"333 peachtree street",
+            "city":"Atlanta","state":"georgia",
+            "postcode":30303
+        },
+        "date":{
+            "time":1100,
+            "dayofweek":"friday",
+            "month":"september",
+            "date":"7",
+            "year":"2017",
+            "timezone":"EST"
+        },
+        "rsvp_code":"19671029298637",
+        "time_registered":"2017-06-12 14:26:30",
+        "phone":"(917)-264-5311",
+        "cell":"(305)-297-3980",
+        "organizer_info":{
+            "name":"bob lee",
+            "email":"bob.lee@example.com"
+        },
+        "event_picture":{
+            "large":"https://randomuser.me/api/portraits/men/0.jpg",
+            "medium":"https://randomuser.me/api/portraits/med/men/0.jpg",
+            "thumbnail":"https://randomuser.me/api/portraits/thumb/men/0.jpg"},
+            "nat":"US"
+        },
+
+    ]}
+
+
+let eventViewContainer = document.querySelector('#attendeesList');
+
+
+// fetch()
+// .then(function(response) {
+// response.json().then(function(data){
+  for (var i = 0; i < users.results.length; i++) {
+    for (var j = 0; j < users.results[i].eventsClicked.length; j++) {
+
+      if(users.results[i].eventsClicked[j] === "19671029091609") {
+      let attendees =
+      `
+
+      <p id="attendees">${users.results[i].name.first + " " + users.results[i].name.last}</>
+       `;
+
+  attendeesList.innerHTML+=attendees;
+}
+}
+};
+
+
+let eventDescription = document.querySelector('.eventDescription');
+
+
+// fetch()
+// .then(function(response) {
+// response.json().then(function(data){
+  for (var i = 0; i < events.results.length; i++) {
+      if(events.results[i].rsvp_code === "19671029091609") {
+      let eventName =
+      `
+
+      <h1 id="eventName">${events.results[i].title}</>
+       `;
+
+  eventDescription.innerHTML+eventName;
+}
+}
+;
