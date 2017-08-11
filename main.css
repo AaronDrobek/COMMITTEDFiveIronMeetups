@@ -1,5 +1,5 @@
 *{
-  border: 1px solid orange;
+ 
   margin: 0;
   padding: 0;
 }
@@ -7,6 +7,8 @@
 body{
   width: 100vw;
   height: 50vw;
+  background-color: rgb(176, 196, 222);
+
 }
 
 
@@ -14,8 +16,34 @@ body{
 
 .signUpHeader{
   width: 100vw;
-  height: 20vw;
+  height: 5vw;
   text-align: center;
+  border: none;
+  background-color: rgb(41, 36, 33);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+
+}
+.signUpHeader h1{
+  border: none;
+  font-family: Helvetica;
+  color: white;
+  font-size: 50px;
+}
+.signUpHeader :hover{
+  color: rgb(176, 196, 222);
+}
+.pleaseLogin{
+  display: flex;
+  justify-content: center;
+  font-size: 60px;
+  font-style: italic;
+
+}
+.pleaseLogin :hover{
+  color: white;
 }
 
 .signupContainer{
@@ -29,6 +57,8 @@ body{
   height: 30vw;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #username{
@@ -58,14 +88,22 @@ body{
   text-align: center;
   width: 28vw;
   height: 2vw;
+
 }
 
 #goToSignUp{
   background: limegreen;
   align-self: center;
   text-align: center;
-  width: 28vw;
-  height: 2vw;
+  width: 100px;
+  height: 50px;
+  margin-top: 50px;
+  border-radius: 10px;
+  font-size: 20px;
+  box-shadow: 0px 5px 5px black;
+}
+#goToSignUp :hover{
+  color: lightgreen;
 }
 
 #login{
@@ -73,6 +111,7 @@ body{
   height: 2vw;
   align-self: center;
   text-align: center;
+  background-color: rgb(139, 139, 131);
 }
 
 #goToLogin{

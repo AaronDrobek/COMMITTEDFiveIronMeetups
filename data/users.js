@@ -64,6 +64,7 @@ const users =
             },
 ]}
 
+<<<<<<< HEAD
 const events =
     {"results":[{
         "title":"TIY Graduation",
@@ -167,3 +168,7 @@ let eventDescription = document.querySelector('.eventDescription');
 }
 }
 ;
+=======
+
+// console.log(users);
+>>>>>>> a49cd176a0d44a8c3ef2055f42050dd64eabcf2a
