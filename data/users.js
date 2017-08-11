@@ -63,6 +63,3 @@ const users =
                 "nat":"US"
             },
 ]}
-
-
-// console.log(users);
