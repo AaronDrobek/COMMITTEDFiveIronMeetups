@@ -1,3 +1,4 @@
+
 let login = `
   <div class="login">
 
@@ -5,17 +6,18 @@ let login = `
 
       <header class="signUpHeader">
         <h1>Iron Meetups</h1>
-        <h4>Please Login!</h4>
+        
       </header>
       <div class="loginContainer">
         <input type="text" id="username" value="Username">
         <input type="text" id="password" value="Password">
         <button type="button" id="login" >Login</button>
-        <button type="button" id="goToSignUp">Create An Account</button>
+        <button type="button" id="goToSignUp">Sign up!</button>
 
       </div>
-
-
+      <div class = "pleaseLogin">
+      <h4>Please Login!</h4>
+      </div
   </div>`;
 
 let signUp = `
@@ -106,6 +108,24 @@ let eventView = `
 //    });
 //  }
 let container = document.querySelector(".container");
+
+
+for (var i = 0; i < events.results.length; i++) {
+
+    let eventBox = document.createElement('div');
+    // console.log(eventBox);
+    console.log(events.results[i].title);
+    // console.log(events.results[0].title);
+    eventBox.innerHTML=`
+    <h1>${events.results[i].title}</h1>
+    <h4>${events.results[i].location.city},${events.results[i].location.state}</h4>
+    <p>${events.results[i].date.fullDateTimeOfEvent}</p>
+    <button type = "" value"">RSVP</button>
+    <button type = "" value"">Event</button>
+    `
+    container.appendChild(eventBox);
+}
+
 // container.innerHTML= login;
 // // console.log("working");
 //
@@ -123,22 +143,3 @@ let container = document.querySelector(".container");
 //=================
 //
 // console.log(events);
-for (var i = 0; i < events.results.length; i++) {
-
-    let eventBox = document.createElement('div');
-    // console.log(eventBox);
-    console.log(events.results[i].title);
-    // console.log(events.results[0].title);
-    eventBox.innerHTML=`
-    <h1>${events.results[i].title}</h1>
-    <h4>${events.results[i].location.city},${events.results[i].location.state}</h4>
-    <p>${events.results[i].date.fullDateTimeOfEvent}</p>
-    <button type = "" value"">RSVP</button>
-    <button type = "" value"">Event</button>
-
-
-
-    `
-
-    container.appendChild(eventBox);
-}
