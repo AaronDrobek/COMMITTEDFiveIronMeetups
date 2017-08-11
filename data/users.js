@@ -23,6 +23,7 @@ const users =
         "registered":"2007-01-12 19:26:30",
         "phone":"(518)-664-5821",
         "cell":"(385)-917-9080",
+        "eventsClicked" : ["19671029298637","19671029091609"],
         "picture":{
             "large":"https://randomuser.me/api/portraits/men/0.jpg",
             "medium":"https://randomuser.me/api/portraits/med/men/0.jpg",
@@ -54,6 +55,7 @@ const users =
             "registered":"2007-05-12 13:26:30",
             "phone":"(518)-664-5781",
             "cell":"(385)-917-5920",
+            "eventsClicked" : ["19671029091609"],
             "picture":{
                 "large":"https://randomuser.me/api/portraits/men/0.jpg",
                 "medium":"https://randomuser.me/api/portraits/med/men/0.jpg",
@@ -61,3 +63,6 @@ const users =
                 "nat":"US"
             },
 ]}
+
+
+// console.log(users);

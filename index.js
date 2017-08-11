@@ -99,21 +99,47 @@ let eventView = `
           </div>
   </div>
 `;
- function signup() {
-   let goToSignUp = document.querySelector("#goToSignUp");
-
-   goToSignUp.addEventListener('click', function(){
-     console.log("signupActivated");
-     container.innerHTML= signUp;
-   });
- }
+//  function signup() {
+//    let goToSignUp = document.querySelector("#goToSignUp");
+//
+//    goToSignUp.addEventListener('click', function(){
+//      console.log("signupActivated");
+//      container.innerHTML= signUp;
+//    });
+//  }
 let container = document.querySelector(".container");
-container.innerHTML= login;
-console.log("working");
 
 
-let goToLogin = document.querySelector("#goToLogin");
-goToLogin.addEventListener('click', function(){
+for (var i = 0; i < events.results.length; i++) {
 
-});
+    let eventBox = document.createElement('div');
+    // console.log(eventBox);
+    console.log(events.results[i].title);
+    // console.log(events.results[0].title);
+    eventBox.innerHTML=`
+    <h1>${events.results[i].title}</h1>
+    <h4>${events.results[i].location.city},${events.results[i].location.state}</h4>
+    <p>${events.results[i].date.fullDateTimeOfEvent}</p>
+    <button type = "" value"">RSVP</button>
+    <button type = "" value"">Event</button>
+    `
+    container.appendChild(eventBox);
+}
 
+// container.innerHTML= login;
+// // console.log("working");
+//
+//
+// let goToLogin = document.querySelector("#goToLogin");
+// goToLogin.addEventListener('click', function(){
+//
+// });
+//---========= what we use when we have the API
+// let events;
+//
+// fetch("url").then(function(data) {
+//     events = data.toJson();
+// });
+//=================
+//
+// console.log(events);

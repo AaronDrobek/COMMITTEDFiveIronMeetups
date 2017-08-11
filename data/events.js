@@ -3,16 +3,18 @@ const events =
         "title":"TIY Graduation",
         "location":{
             "street":"115 MLK JR Drive",
-            "city":"Atlanta","state":"georgia",
+            "city":"Atlanta",
+            "state":"georgia",
             "postcode":30303
         },
         "date":{
             "time":1500,
             "dayofweek":"friday",
-            "month":"october",
-            "date":"6",
+            "month":"10",
+            "date":"06",
             "year":"2017",
-            "timezone":"EST"
+            "timezone":"EST",
+            "fullDateTimeOfEvent":"2017-10-06 15:00:00"
         },
         "rsvp_code":"19671029091609",
         "time_registered":"2007-01-12 19:26:30",
@@ -41,7 +43,9 @@ const events =
             "month":"september",
             "date":"7",
             "year":"2017",
-            "timezone":"EST"
+            "timezone":"EST",
+            "fullDateTimeOfEvent":"2017-09-07 11:00:00"
+
         },
         "rsvp_code":"19671029298637",
         "time_registered":"2017-06-12 14:26:30",
