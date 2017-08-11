@@ -6,7 +6,7 @@ let login = `
 
       <header class="signUpHeader">
         <h1>Iron Meetups</h1>
-        
+
       </header>
       <div class="loginContainer">
         <input type="text" id="username" value="Username">
@@ -143,3 +143,52 @@ for (var i = 0; i < events.results.length; i++) {
 //=================
 //
 // console.log(events);
+
+
+
+
+
+
+
+
+
+
+
+let eventViewContainer = document.querySelector('#attendeesList');
+
+
+// fetch()
+// .then(function(response) {
+// response.json().then(function(data){
+  for (var i = 0; i < users.results.length; i++) {
+    for (var j = 0; j < users.results[i].eventsClicked.length; j++) {
+
+      if(users.results[i].eventsClicked[j] === "19671029091609") {
+      let attendees =
+      `
+
+      <p id="attendees">${users.results[i].name.first + " " + users.results[i].name.last}</>
+       `;
+
+  attendeesList.innerHTML+=attendees;
+}
+}
+};
+
+
+// let eventDescription = document.querySelector('.eventDescription');
+//
+//
+//
+//   for (var i = 0; i < events.results.length; i++) {
+//       if(events.results[i].rsvp_code === "19671029091609") {
+//       let eventName =
+//       `
+//
+//       <h1 id="eventName">${events.results[i].title}</>
+//        `;
+//
+//   eventDescription.innerHTML+eventName;
+// }
+// }
+// ;
