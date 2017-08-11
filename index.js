@@ -9,8 +9,8 @@ let login = `
 
       </header>
       <div class="loginContainer">
-        <input type="text" id="username" value="Username">
-        <input type="text" id="password" value="Password">
+        <input type="text" id="username" placeholder ="Username">
+        <input type="text" id="password" placeholder="Password">
         <button type="button" id="login" >Login</button>
         <button type="button" id="goToSignUp">Sign up!</button>
 
@@ -48,22 +48,11 @@ let eventList = `
               <a class="link" href="signup.html">Log Out</a>
             </nav>
     </header>
+  </div>
 
     <div class="eventListContainer">
-      <div class="eventListItems">
-          <p id="eventListName">Event Name</p>
-            <div class="eventDetails">
-              <p id="eventListLocation">Location</p>
-              <p id="eventListDateTime">Date and Time</p>
-            </div>
-      </div>
 
-        <div id="confirmOrView">
-          <button id="rsvp" type="button" name="button">Click to RSVP</button>
-          <button id="view"type="button" name="button">View Event Info</button>
-        </div>
 
-    </div>
 
 
 
@@ -94,7 +83,7 @@ let eventView = `
 
           <div class="attendeesList">
                 <h2>Attendees</h2>
-                <p id="attendees"></p>
+
          <!-- //will be in for loop to generate registered users. Wasn't sure if p tag was most appropriate. -->
           </div>
   </div>
@@ -104,6 +93,8 @@ let eventView = `
   let goToLoginButton;
   let signUpButton;
   let container;
+  let eventListContainer;
+  let eventViewContainer;
   window.onload =function(){
     container        = document.querySelector(".container");
     container.innerHTML= login;
@@ -117,14 +108,16 @@ let eventView = `
     signUpButton     = document.querySelector("#signUp");
     console.log(goToSignUpButton);
     signUpListener();
-
+    goToEventList();
   };
   function upDateVariables(){
     goToSignUpButton = document.querySelector("#goToSignUp");
     loginButton      = document.querySelector("#login");
     goToLoginButton  = document.querySelector("#goToLogin");
     signUpButton     = document.querySelector("#signUp");
-  }
+    // eventListContainer = document.querySelector(".eventListContainer");
+    // goToEventList() ;
+   }
 
 
   function signUpListener(){
@@ -134,6 +127,7 @@ let eventView = `
       console.log("gotobutton clicked");
       upDateVariables();
       loginListener();
+      goToEventList();
 
     });
 
@@ -142,41 +136,105 @@ let eventView = `
 
 
   function loginListener(){
-    console.log(goToLoginButton);
     goToLoginButton.addEventListener('click', function(){
       container.innerHTML=login;
-      console.log("gotobutton clicked");
       upDateVariables();
       signUpListener();
+      goToEventList();
     });
   }
 
+function goToEventList(){
   loginButton.addEventListener('click', function(){
-    container.innerHTML= eventList;
+
+      // upDateVariables();
+      container.innerHTML= eventList;
+      eventBox();
+
+
 
   });
 
+}
+function updateEventList(){
+  eventListContainer = document.querySelector(".eventListContainer");
+}
 
 
 
 
 
+function eventBox(){
+  updateEventList();
 
   for (var i = 0; i < events.results.length; i++) {
 
-    let eventBox = document.createElement('div');
-    // console.log(eventBox);
-    console.log(events.results[i].title);
-    // console.log(events.results[0].title);
-    eventBox.innerHTML=`
-    <h1>${events.results[i].title}</h1>
-    <h4>${events.results[i].location.city},${events.results[i].location.state}</h4>
-    <p>${events.results[i].date.fullDateTimeOfEvent}</p>
-    <button type = "" value"">RSVP</button>
-    <button type = "" value"">Event</button>
-    `
-    container.appendChild(eventBox);
-  }
+    console.log(eventListContainer);
+    //eventListContainer = document.querySelector(".eventListContainer");
+    // let = document.createElement('div');
+    let listItems = document.createElement("div");
+    listItems.setAttribute("class", "eventListItems");
+    listItems.innerHTML = `
+    <h1 class="eventListName">${events.results[i].title}</h1>
+    <div class="eventDetails">
+    <h4 class="eventListLocation">${events.results[i].location.city},${events.results[i].location.state}</h4>
+    <h4 class="eventListDateTime">${events.results[i].date.fullDateTimeOfEvent}</h4>
+    </div>`
+    let rsvp = document.createElement("button");
+    let view = document.createElement("button");
+    rsvp.setAttribute("class", "rsvp")
+    view.setAttribute("class", "view")
+    rsvp.textContent= "RSVP"
+    view.textContent= "View Event"
+    rsvp.addEventListener('click', function(){
+      container.innerHTML = eventView;
+      console.log("RSVP Clicky click");
+    });
+    view.addEventListener('click', function(){
+
+      container.innerHTML = eventView;
+      console.log("seeking event info");
+    });
+    listItems.appendChild(view);
+    listItems.appendChild(rsvp);
+    eventListContainer.appendChild(listItems);
+
+    container.appendChild(eventListContainer);
+    // <div id="confirmOrView">
+    // <button class="rsvp" type="button" name="button">RSVP</button>
+    // <button class="view"type="button" name="button">View Event Info</button>
+    // </div>
+    // goToEventView();
+}
+};
+function updateView(){
+  console.log("UV running");
+  eventViewContainer = document.querySelector(".eventViewContainer");
+}
+
+    // function goToEventView(){
+    //   console.log("GTV running");
+    //
+    //   document.getElementsByClassName('className')(".view").addEventListener('click', function(){
+    //
+    //       upDateVariables();
+    //       container.innerHTML= eventView;
+    //       list();
+    //   });
+    // }
+
+
+
+
+
+
+
+
+
+
+
+
+    // container.appendChild(eventBox);
 
 // container.innerHTML= login;
 // // console.log("working");
@@ -206,13 +264,14 @@ let eventView = `
 
 
 
-let eventViewContainer = document.querySelector('#attendeesList');
+
 
 
 // fetch()
 // .then(function(response) {
 // response.json().then(function(data){
-
+function list(){
+let attendeesList = document.querySelector(".attendeesList");
   for (var i = 0; i < users.results.length; i++) {
     for (var j = 0; j < users.results[i].eventsClicked.length; j++) {
 
@@ -227,6 +286,7 @@ let eventViewContainer = document.querySelector('#attendeesList');
 }
 }
 };
+}
 
 
 // let eventDescription = document.querySelector('.eventDescription');
