@@ -1,4 +1,4 @@
-
+console.log("index activated");
 let login = `
   <div class="login">
 
@@ -98,19 +98,71 @@ let eventView = `
          <!-- //will be in for loop to generate registered users. Wasn't sure if p tag was most appropriate. -->
           </div>
   </div>
-`;
-//  function signup() {
-//    let goToSignUp = document.querySelector("#goToSignUp");
-//
-//    goToSignUp.addEventListener('click', function(){
-//      console.log("signupActivated");
-//      container.innerHTML= signUp;
-//    });
-//  }
-let container = document.querySelector(".container");
+  // `
+  let goToSignUpButton;
+  let loginButton;
+  let goToLoginButton;
+  let signUpButton;
+  let container;
+  window.onload =function(){
+    container        = document.querySelector(".container");
+    container.innerHTML= login;
+    setVariables();
+  };
+
+  function setVariables(){
+    goToSignUpButton = document.querySelector("#goToSignUp");
+    loginButton      = document.querySelector("#login");
+    goToLoginButton  = document.querySelector("#goToLogin");
+    signUpButton     = document.querySelector("#signUp");
+    console.log(goToSignUpButton);
+    signUpListener();
+
+  };
+  function upDateVariables(){
+    goToSignUpButton = document.querySelector("#goToSignUp");
+    loginButton      = document.querySelector("#login");
+    goToLoginButton  = document.querySelector("#goToLogin");
+    signUpButton     = document.querySelector("#signUp");
+  }
 
 
-for (var i = 0; i < events.results.length; i++) {
+  function signUpListener(){
+    console.log(goToSignUpButton);
+    goToSignUpButton.addEventListener('click', function(){
+      container.innerHTML=signUp;
+      console.log("gotobutton clicked");
+      upDateVariables();
+      loginListener();
+
+    });
+
+  }
+
+
+
+  function loginListener(){
+    console.log(goToLoginButton);
+    goToLoginButton.addEventListener('click', function(){
+      container.innerHTML=login;
+      console.log("gotobutton clicked");
+      upDateVariables();
+      signUpListener();
+    });
+  }
+
+  loginButton.addEventListener('click', function(){
+    container.innerHTML= eventList;
+
+  });
+
+
+
+
+
+
+
+  for (var i = 0; i < events.results.length; i++) {
 
     let eventBox = document.createElement('div');
     // console.log(eventBox);
@@ -124,7 +176,7 @@ for (var i = 0; i < events.results.length; i++) {
     <button type = "" value"">Event</button>
     `
     container.appendChild(eventBox);
-}
+  }
 
 // container.innerHTML= login;
 // // console.log("working");
@@ -160,6 +212,7 @@ let eventViewContainer = document.querySelector('#attendeesList');
 // fetch()
 // .then(function(response) {
 // response.json().then(function(data){
+
   for (var i = 0; i < users.results.length; i++) {
     for (var j = 0; j < users.results[i].eventsClicked.length; j++) {
 

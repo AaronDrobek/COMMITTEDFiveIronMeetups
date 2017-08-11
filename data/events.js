@@ -1,3 +1,4 @@
+console.log("Write like whatever");
 const events =
     {"results":[{
         "title":"TIY Graduation",
@@ -63,3 +64,4 @@ const events =
         },
 
     ]}
+console.log("events here");
